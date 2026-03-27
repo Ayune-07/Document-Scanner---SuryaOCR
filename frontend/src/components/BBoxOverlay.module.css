@@ -1,0 +1,91 @@
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
+  border: 1.5px solid var(--paper-3);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.paper {
+  width: 100%;
+  height: 100%;
+  background: #faf8f3;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 23px,
+      rgba(26,26,24,0.04) 24px
+    );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 24px;
+  min-height: 300px;
+}
+
+.paperLabel {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink-3);
+}
+
+.paperSub {
+  font-size: 10px;
+  color: var(--paper-3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── Bounding boxes ──────────────────────────── */
+.bbox {
+  position: absolute;
+  border: 1.5px solid var(--bbox);
+  background: var(--bbox-fill);
+  border-radius: 1px;
+  cursor: default;
+  transition: background 0.15s, border-color 0.15s;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bbox:hover {
+  background: rgba(200, 75, 47, 0.14);
+  border-color: var(--accent);
+  z-index: 2;
+}
+
+.bboxLabel {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 10px;
+  padding: 3px 7px;
+  border-radius: 2px;
+  white-space: nowrap;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.bbox:hover .bboxLabel {
+  display: block;
+}
+
+.documentImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+}

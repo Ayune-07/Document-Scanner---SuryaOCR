@@ -1,0 +1,44 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:       #1a1a18;
+  --ink-2:     #3a3a36;
+  --ink-3:     #7a7a72;
+  --paper:     #f5f2eb;
+  --paper-2:   #ede9e0;
+  --paper-3:   #e0dbd0;
+  --accent:    #c84b2f;
+  --accent-2:  #e8a020;
+  --scan-line: rgba(200, 75, 47, 0.18);
+  --bbox:      rgba(200, 75, 47, 0.55);
+  --bbox-fill: rgba(200, 75, 47, 0.07);
+  --radius:    4px;
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-mono:  'DM Mono', 'Courier New', monospace;
+  --shadow:    0 2px 12px rgba(26,26,24,0.10);
+  --shadow-lg: 0 8px 40px rgba(26,26,24,0.18);
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--paper-2); }
+::-webkit-scrollbar-thumb { background: var(--paper-3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-3); }
+
+/* Selection */
+::selection { background: var(--accent); color: #fff; }
+
+button {
+  cursor: pointer;
+  font-family: var(--font-mono);
+}
